@@ -1,13 +1,14 @@
-Mac Setup for Rails Developers
-==============================
+Doing it Right
+==============
 
-This a guide to help you get setup for Rails development on a Mac. I had to do this recently for someone else, so I figured I would document the process.
+This is an opinionated guide to getting a developer environment setup on a Mac. This is written assuming you have Lion (10.7+) or later as your operating system.
+If you have the choice, always choose a Mac for your dev environment. Much less frustration. Linux is okay too. For Windows based machines, you can wrestle with Cygwin or setup a dual-boot into Linux. Choose Ubuntu 12.04+ if you're going this way and not sure.
 
 
 XCode and Developer Tools
 -------------------------
 
-Install the latest [XCode](https://developer.apple.com/xcode/). *Make sure to also install command line tools*.
+Install the latest [XCode](https://developer.apple.com/xcode/). **Make sure to also install command line tools, which is an option during the install process**.
 
 
 HomeBrew
@@ -15,9 +16,7 @@ HomeBrew
 
 [HomeBrew](http://brew.sh/) is a package manager for OS X, which we'll use to install our command-line applications.
 
-Follow instructions at bottom of Homebrew page to install it
-
-To install HomeBrew, run the following at the command line:
+To install HomeBrew, copy, paste and run the following at the command line:
 ```
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 ```
@@ -160,7 +159,7 @@ GitHub Installation
 * hook git up to your existing GitHub account
 * setup ssh keys so you don't have to type your password in every single time
 
-
+(see brian's thing)
 
 
 Resources
