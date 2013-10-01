@@ -165,37 +165,42 @@ and then Connect. You're now connected to your MySQL database and can add, view,
 
 ## Installing Rails locally
 
-You need to have Rails locally in order to create new Rails projects. After the project is created (or if you're working with an existing Rails project), you'll always be using the bundled versions of Rails specific to your project.
+You need to have Rails locally in order to create new Rails projects. After the project is created (or if you're working with an existing Rails project), you'll be using the bundled versions of Rails specific to your project.
 
-gem install rails -v 3.2.13 (this is the latest stable version of Rails 3)
-gem install rails (get the latest version of Rails, which at the time of writing is Rails 4)
+To get the latest stable version of Rails 3:
+```
+gem install rails -v 3.2.13
+```
 
-For Mac, never run sudo in front of these commands.
+Never run sudo in front of these commands, or it may install to the wrong folder.
 
-You can look at your gems using gem list. Verify that Rails is there and the version is correct.
+You can look at your gems using ```gem list```. Verify that Rails is there and the version is correct.
 
-Now run source ~/.bash_profile so that rails is visible.
+Now run ```source ~/.bash_profile``` so that rails is visible.
 
-Let's install Rails 4 as well. This is just
+Let's install Rails 4 (the latest at the time of writing) as well:
+```
 gem install rails
+```
 
-source ~/.bash_profile again.
+```source ~/.bash_profile``` again.
 
+### Making a New Rails Project
+By default any Rails commands now will use the latest version of Rails. Sometimes you'll have to use Rails 3 though.
 
-Making a new Rails project
-By default any Rails commands now will use the latest version of Rails. Some assignments assume Rails 3 though.
-
-To make a new Rails 4 project, cd into your projects folder:
-
+To make a new Rails 4 project, ```cd``` into your projects folder:
+```
 rails new app_name
+```
 or
-rails _3.2.13_ app_name
+```
+rails _3.2.13_ new app_name
+```
+
+then run ```rails server```. Visit ```http://localhost:3000``` in your browser. Congrats!
 
 
-the run rails server. visit http://localhost:3000 in your browser. congrats.
-
-
-GitHub Installation
+## GitHub Installation
 * hook git up to your existing GitHub account
 * setup ssh keys so you don't have to type your password in every single time
 
