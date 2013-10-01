@@ -121,13 +121,13 @@ After this finishes, you can setup your global (default) Ruby:
 rbenv global 2.0.0-p247
 ```
 
-Note that you can override global setting per project. See [Choosing the Ruby Version](https://github.com/sstephenson/rbenv#choosing-the-ruby-version) for more information.
+Note that you can override this global setting per project. See [Choosing the Ruby Version](https://github.com/sstephenson/rbenv#choosing-the-ruby-version) for more information.
 
 ## RubyGems
 
-rubygems ships with Ruby 2.0.0+. If you need to install this manually, see [http://rubygems.org/pages/download](http://rubygems.org/pages/download).
+RubyGems is a package management framework for Ruby. It ships with Ruby 2.0.0+. We use it to install Ruby apps such as Rails. If you need to install this manually, see [http://rubygems.org/pages/download](http://rubygems.org/pages/download).
 
-Run ```gem update --system``` to get the latest version.
+Run ```gem update --system``` to update to the latest version.
 
 ## MySQL (server)
 
@@ -135,32 +135,37 @@ Run ```gem update --system``` to get the latest version.
 brew install mysql
 ```
 
-After installation you get a message showing you how to run mysql automatically when your system boots. If you don't want it to startup on boot, you can run the following commands to start and stop mysql server:
+After installation you get a message showing you how to run mysql automatically when your system boots:
 
+![MySQL post-installation message](assets/install-mysql.png)
+
+If you don't want it to startup on boot, you can run the following commands to start and stop mysql server:
+```
 mysql.server start
 mysql.server stop
+```
 
-mysql -uroot to connect to the server using the command line, but we'll be using sequel pro which is a really nice GUI to interact with the database in general.
+Use ```mysql -uroot``` to connect to the server using the command line, but we'll be using Sequel Pro to interact with the database in general. Sequel Pro is awesome.
 
+## Sequel Pro (MySQL client)
 
-Sequel Pro (MySQL client)
-http://www.sequelpro.com
+[http://www.sequelpro.com](http://www.sequelpro.com)
 
-Download and drag this to Applications in order to install.
-This is the best MySQL client for Mac.
+Download and drag this to your Applications folder to install. This is the best MySQL client for Mac.
 
 Go to the Socket tab and enter the following to connect:
 
+```
 Name: localhost
 Username: root
+```
 
 and then Connect. You're now connected to your MySQL database and can add, view, delete databases like a boss.
 
 
+## Installing Rails locally
 
-Installing Rails locally
-
-You need to have Rails locally in order to create new Rails projects. After the project is created (or if you're working with an existing rails project), you'll always be using the bundled versions of Rails specific to your project.
+You need to have Rails locally in order to create new Rails projects. After the project is created (or if you're working with an existing Rails project), you'll always be using the bundled versions of Rails specific to your project.
 
 gem install rails -v 3.2.13 (this is the latest stable version of Rails 3)
 gem install rails (get the latest version of Rails, which at the time of writing is Rails 4)
