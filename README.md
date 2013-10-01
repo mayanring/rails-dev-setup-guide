@@ -5,7 +5,7 @@ If you have the choice, always choose a Mac for your dev environment. It's just 
 
 I'm writing this guide to help new developers setup a clean system. If you already have some of this software installed, you'll have to adjust accordingly. If you use RVM or MacPorts, you'll need to fully uninstall those before continuing as they're incompatible with rbenv and HomeBrew, which are my preferred tools.
 
-This guide assumes that you're using bash shell, which is the default shell for the OSX Terminal.app. I also assume that you use .bash_profile to setup PATH and other environment variables. If you use a different bash config file, be sure to substitute it where appropriate below.
+This guide assumes that you're using bash shell, which is the default shell for the OS X Terminal.app. I also assume that you use .bash_profile to setup PATH and other environment variables. If you use a different bash config file, be sure to substitute it where appropriate below.
 
 ## Preflight
 
@@ -45,7 +45,7 @@ Now run ```brew update``` to get the latest HomeBrew formulas.
 
 ### An Aside: Why PATH Order is Important
 
-Command-line executables are searched by going through each folder in the PATH variable, one by one in the order listed. As soon as an app with the same name is found, it stops searching the rest of the folders. OSX comes with built-in apps (and you might have your own apps installed prior to this), but we often want to use newer versions instead. To see the PATH directories, run ```echo $PATH```.
+Command-line executables are searched by going through each folder in the PATH variable, one by one in the order listed. As soon as an app with the same name is found, it stops searching the rest of the folders. OS X comes with built-in apps (and you might have your own apps installed prior to this), but we often want to use newer versions instead. To see the PATH directories, run ```echo $PATH```.
 
 HomeBrew packages are downloaded and installed in /usr/local/Cellar/ by default, and symlinked into /usr/local/bin. This folder will not be overriden the next time Apple
 releases an incremental feline update.
@@ -66,29 +66,46 @@ brew install git
 
 Then run ```git --version```. The version should be > 1.8.
 
-## Installing Sublime Text Editor for the Command Line
-[http://www.sublimetext.com/docs/2/osx_command_line.html](http://www.sublimetext.com/docs/2/osx_command_line.html)
+## Installing Sublime Text 2 for the Command Line
+[http://www.sublimetext.com/docs/2/OS X_command_line.html](http://www.sublimetext.com/docs/2/OS X_command_line.html)
 
-We're going to install this in the homebrew bin directory instead of ~/bin as stated on the sublime text website.
+Sublime Text 2 comes with a command-line app called ```subl```. We're going to install this in the homebrew bin directory instead of ~/bin as stated on the sublime text website.
 ```
 ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 ```
 
-rbenv
-https://github.com/sstephenson/rbenv
+Now we can open up files (and folders!) from the command line using
+```
+subl name_of_file_or_folder
+```
 
+## rbenv
+```
 brew install rbenv
-This installs rbenv, a lightweight tool to help you manage different version of ruby. OSX comes with an old version of ruby, and we'll generally want to have our own versions of Rails (particularly 3.2.13 and 4.0.0).
+```
 
+![Installing rbenv](assets/install-rbenv.png)
+
+This installs [rbenv](https://github.com/sstephenson/rbenv), a lightweight tool to manage different versions of Ruby. OS X comes with an old version of Ruby, but we'll generally want to have our own versions of it (particularly 1.9.3 and 2.0.0).
+
+### ruby-build
+
+Let's install [ruby-build](https://github.com/sstephenson/ruby-build), a plugin for rbenv to conveniently install different versions of Ruby.
+
+```
 brew install ruby-build
+```
+![Installing ruby-build](assets/install-ruby-build.png)
 
-subl ~/.bash_profile
+Now we need to modify our bash config. Open up bash_profile ```subl ~/.bash_profile``` and add the following to the end of the file and save:
 
-add ' eval "$(rbenv init -)" ' to the end of ~/.bash_profile and save.
+```
+add ' eval "$(rbenv init -)" '
+```
 
-Then either restart Terminal or run 'source ~/.bash_profile' to apply the changes.
+Then either restart Terminal or run ```source ~/.bash_profile``` to apply the changes.
 
-If you look at your path (echo $PATH) you should see that reloading your bash_profile has inserted .rbenv/shims to the beginning of your $PATH variable.
+If you look at your path (```echo $PATH```) you should see that reloading your .bash_profile has inserted .rbenv/shims to the beginning of your $PATH variable.
 
 To install ruby 2.0.0-p247 (substitute this for the latest stable version of ruby indicated on ruby-lang.org):
 rbenv install 2.0.0-p247
