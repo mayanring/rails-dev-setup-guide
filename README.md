@@ -200,16 +200,18 @@ rails _3.2.13_ new app_name
 then run ```rails server```. Visit ```http://localhost:3000``` in your browser. Congrats!
 
 
-## GitHub Installation
+TBD:
+
+GitHub Setup
 * hook git up to your existing GitHub account
 * setup ssh keys so you don't have to type your password in every single time
 
 (see brian's thing)
 
+Node.js
 
 Resources
 http://blog.teamtreehouse.com/installing-ruby-rails-and-mysql-on-os-x-lion
-
 
 git (newer version)
   * config stuff
@@ -227,8 +229,6 @@ ssh key generation
 
 
 software (optional)
-
-* sublime - setting up subl for command line use
-  * package manager
+* installing package manager for sublime
 * postgres.app
 * sequel pro
