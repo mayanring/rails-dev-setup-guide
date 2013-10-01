@@ -7,6 +7,11 @@ I'm writing this guide from the point of view of someone setting up a clean syst
 
 This guide assumes that you're using bash shell, which is the default shell for the OSX Terminal application. I also assume that you use .bash_profile to setup PATH and other environment variables. If you use a different bash config file, be sure to substitute it where appropriate below.
 
+## Preflight
+
+Download and install (make sure to drag the app into to the Applications folder before running it) [Sublime Text 2](http://www.sublimetext.com/2). This is my text editor of choice.
+
+
 ## XCode and Developer Tools
 
 Install the latest [XCode](https://developer.apple.com/xcode/). **Make sure to also install command line tools, which is an option during the install process**.
