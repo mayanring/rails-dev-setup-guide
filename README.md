@@ -105,29 +105,35 @@ add ' eval "$(rbenv init -)" '
 
 Then either restart Terminal or run ```source ~/.bash_profile``` to apply the changes.
 
-If you look at your path (```echo $PATH```) you should see that reloading your .bash_profile has inserted .rbenv/shims to the beginning of your $PATH variable.
+If you look at your path (```echo $PATH```) you should see that reloading your config has inserted .rbenv/shims to the beginning of your $PATH variable. This is necessary for rbenv to work its magic.
 
-To install ruby 2.0.0-p247 (substitute this for the latest stable version of ruby indicated on ruby-lang.org):
+## Installing Ruby
+
+To install ruby 2.0.0-p247 (substitute this for the latest stable version of ruby indicated on [ruby-lang.org](http://ruby-lang.org)):
+```
 rbenv install 2.0.0-p247
+```
 
-You can install other rubies this way as well. This may take some time.
+This may take some time. Go get a coffee. I like [Stumptown](http://stumptowncoffee.com/). You can install other rubies this way as well.
 
-After this finishes, you can setup your global (default) ruby by typing:
+After this finishes, you can setup your global (default) Ruby:
+```
 rbenv global 2.0.0-p247
+```
 
-Note that you can override this per project (folder). See https://github.com/sstephenson/rbenv#choosing-the-ruby-version for more information.
+Note that you can override global setting per project. See [Choosing the Ruby Version](https://github.com/sstephenson/rbenv#choosing-the-ruby-version) for more information.
 
+## RubyGems
 
-RubyGems
-rubygems ships with ruby 2.0.0. If you need to install this manually, see http://rubygems.org/pages/download
+rubygems ships with Ruby 2.0.0+. If you need to install this manually, see [http://rubygems.org/pages/download](http://rubygems.org/pages/download).
 
-Run:
-gem update --system to get the latest version.
+Run ```gem update --system``` to get the latest version.
 
+## MySQL (server)
 
-MySQL (server)
-
+```
 brew install mysql
+```
 
 After installation you get a message showing you how to run mysql automatically when your system boots. If you don't want it to startup on boot, you can run the following commands to start and stop mysql server:
 
