@@ -1,5 +1,4 @@
-Doing it Right
-==============
+# Doing it Right
 
 This is an opinionated guide to getting a Rails dev environment setup quickly on a Mac. This is written assuming you have Lion (10.7+) or later as your operating system.
 If you have the choice, always choose a Mac for your dev environment. It's just easier. Linux is okay too.
@@ -8,16 +7,14 @@ I'm writing this guide from the point of view of someone setting up a clean syst
 
 This guide assumes that you're using bash shell, which is the default shell for the OSX Terminal application. I also assume that you use .bash_profile to setup PATH and other environment variables. If you use a different bash config file, be sure to substitute it where appropriate below.
 
-XCode and Developer Tools
--------------------------
+## XCode and Developer Tools
 
 Install the latest [XCode](https://developer.apple.com/xcode/). **Make sure to also install command line tools, which is an option during the install process**.
 
 
-HomeBrew
---------
+## HomeBrew
 
-[HomeBrew](http://brew.sh/) is a package manager for OS X, which we'll use to install our command-line applications.
+[HomeBrew](http://brew.sh/) is a package manager for OS X, which we'll use to install our command-line applications. It's a much more convenient alternative to compiling the code ourselves from source (or using MacPorts).
 
 To install HomeBrew, copy, paste and run the following at the command line:
 ```
@@ -37,22 +34,16 @@ echo export PATH='/usr/local/bin:$PATH' >> ~/.bash_profile
 ```
 This will create a .bash_profile config file which is read and executed each time a new terminal is opened. To apply changes made to this file, you can either restart terminal (ghetto mode), or run ```source ~/.bash_profile```.
 
+Test this out by installing wget via HomeBrew: ```brew install wget```.
+Now run ```brew update``` to get the latest HomeBrew formulas.
+
 
 ### An Aside: Why PATH Order is Important
 
-Command-line apps are searched by going through each folder in the PATH variable, one by one in the order listed. As soon as an app with the same name is found, it stops searching the rest of the folders. OSX comes with built-in apps (and you might have your own apps installed prior to this), but we often want to use newer versions instead.
+Command-line executables are searched by going through each folder in the PATH variable, one by one in the order listed. As soon as an app with the same name is found, it stops searching the rest of the folders. OSX comes with built-in apps (and you might have your own apps installed prior to this), but we often want to use newer versions instead. To see the PATH directories, run ```echo $PATH```.
 
-  *
-* brew install wget
+HomeBrew packages are downloaded and installed in /usr/local/Cellar/ by default, and symlinked into /usr/local/bin. This folder will not be overriden the next time you update OSX to its next feline avatar. Nice!
 
-brew update
-
-notes:
-* homebrew is a package manager for osx. it's generally used to install command-line applications conveniently.
-* brew packages are downloaded and installed in /usr/local/Cellar/ by default, and symlinked into /usr/local/bin. This folder will not be overriden the next time you update OSX
-* command-line executables are searched in order of PATH directories; try running echo $PATH to see the ordering of folders (expand on this with subl and git as an example)
-
-some stuff on how formulas work and how easy they are to make.
 
 For the reader:
 How do I get a list of homebrew packages that are installable?
