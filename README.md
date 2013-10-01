@@ -1,7 +1,7 @@
 Doing it Right
 ==============
 
-This is an opinionated guide to getting a developer environment setup on a Mac. This is written assuming you have Lion (10.7+) or later as your operating system.
+This is an opinionated guide to getting a Rails dev environment setup quickly on a Mac. This is written assuming you have Lion (10.7+) or later as your operating system.
 If you have the choice, always choose a Mac for your dev environment. It's just easier. Linux is okay too.
 
 I'm writing this guide from the point of view of someone setting up a clean system. If you already have some of this software installed, you'll have to adjust accordingly. If you use RVM or MacPorts, you'll need to fully uninstall those before continuing as they're incompatible with rbenv and HomeBrew, which are my preferred tools.
@@ -24,13 +24,25 @@ To install HomeBrew, copy, paste and run the following at the command line:
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 ```
 
-Then close terminal and re-open (restart terminal).
+Then close terminal and re-open it (restart terminal).
+
+Now run ```brew doctor``` to make sure HomeBrew installed correctly. You should see something like this:
+
+![Running brew doctor](assets/homebrew.png)
+
+This is a problem. Let's fix this by moving the bin directory that HomeBrew sets up for us ahead of every other folder specified in PATH. Run the following:
+
+```
+echo export PATH='/usr/local/bin:$PATH' >> ~/.bash_profile
+```
+This will create a .bash_profile config file which is read and executed each time a new terminal is opened. To apply changes made to this file, you can either restart terminal (ghetto mode), or run ```source ~/.bash_profile```.
 
 
-Now run ```brew doctor``` to make sure everything is okay. If there's no error, skip this next step.
+### An Aside: Why PATH Order is Important
 
-  * echo export PATH='/usr/local/bin:$PATH' >> ~/.bash_profile
-This will create a .bash_profile file which gets read every single time you open a new terminal window. From here on in, you can either restart terminal to apply the latest changes in this file, or run 'source ~/.bash_profile'
+Command-line apps are searched by going through each folder in the PATH variable, one by one in the order listed. As soon as an app with the same name is found, it stops searching the rest of the folders. OSX comes with built-in apps (and you might have your own apps installed prior to this), but we often want to use newer versions instead.
+
+  *
 * brew install wget
 
 brew update
