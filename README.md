@@ -2,8 +2,11 @@ Doing it Right
 ==============
 
 This is an opinionated guide to getting a developer environment setup on a Mac. This is written assuming you have Lion (10.7+) or later as your operating system.
-If you have the choice, always choose a Mac for your dev environment. Much less frustration. Linux is okay too. For Windows based machines, you can wrestle with Cygwin or setup a dual-boot into Linux. Choose Ubuntu 12.04+ if you're going this way and not sure.
+If you have the choice, always choose a Mac for your dev environment. It's just easier. Linux is okay too.
 
+I'm writing this guide from the point of view of someone setting up a clean system. If you already have some of this software installed, you'll have to adjust accordingly. If you use RVM or MacPorts, you'll need to fully uninstall those before continuing as they're incompatible with rbenv and HomeBrew, which are my preferred tools.
+
+This guide assumes that you're using bash shell, which is the default shell for the OSX Terminal application. I also assume that you use .bash_profile to setup PATH and other environment variables. If you use a different bash config file, be sure to substitute it where appropriate below.
 
 XCode and Developer Tools
 -------------------------
