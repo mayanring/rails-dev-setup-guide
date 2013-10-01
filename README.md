@@ -1,15 +1,15 @@
-# Doing it Right
+# Doing It Right
 
 This is an opinionated guide to getting a Rails dev environment setup quickly on a Mac. This is written assuming you have Lion (10.7+) or later as your operating system.
 If you have the choice, always choose a Mac for your dev environment. It's just easier. Linux is okay too.
 
-I'm writing this guide from the point of view of someone setting up a clean system. If you already have some of this software installed, you'll have to adjust accordingly. If you use RVM or MacPorts, you'll need to fully uninstall those before continuing as they're incompatible with rbenv and HomeBrew, which are my preferred tools.
+I'm writing this guide to help new developers setup a clean system. If you already have some of this software installed, you'll have to adjust accordingly. If you use RVM or MacPorts, you'll need to fully uninstall those before continuing as they're incompatible with rbenv and HomeBrew, which are my preferred tools.
 
-This guide assumes that you're using bash shell, which is the default shell for the OSX Terminal application. I also assume that you use .bash_profile to setup PATH and other environment variables. If you use a different bash config file, be sure to substitute it where appropriate below.
+This guide assumes that you're using bash shell, which is the default shell for the OSX Terminal.app. I also assume that you use .bash_profile to setup PATH and other environment variables. If you use a different bash config file, be sure to substitute it where appropriate below.
 
 ## Preflight
 
-Download and install (make sure to drag the app into to the Applications folder before running it) [Sublime Text 2](http://www.sublimetext.com/2). This is my text editor of choice.
+Download and install (make sure to drag the app into to the Applications folder before running it) [Sublime Text 2](http://www.sublimetext.com/2). This is the text editor of choice for discerning, good-looking individuals.
 
 
 ## XCode and Developer Tools
@@ -47,31 +47,32 @@ Now run ```brew update``` to get the latest HomeBrew formulas.
 
 Command-line executables are searched by going through each folder in the PATH variable, one by one in the order listed. As soon as an app with the same name is found, it stops searching the rest of the folders. OSX comes with built-in apps (and you might have your own apps installed prior to this), but we often want to use newer versions instead. To see the PATH directories, run ```echo $PATH```.
 
-HomeBrew packages are downloaded and installed in /usr/local/Cellar/ by default, and symlinked into /usr/local/bin. This folder will not be overriden the next time you update OSX to its next feline avatar. Nice!
+HomeBrew packages are downloaded and installed in /usr/local/Cellar/ by default, and symlinked into /usr/local/bin. This folder will not be overriden the next time Apple
+releases an incremental feline update.
 
+### Food for Thought
 
-For the reader:
-How do I get a list of homebrew packages that are installable?
-How do I get a list of currently installed homebrew packages?
-How do I update an existing package?
+* How do I get a list of homebrew packages that are installable?
+* How do I get a list of currently installed homebrew packages?
+* How do I update an existing package?
 
-Git
+## Git
 
-git comes with mac os x but it's typically and old version. Let's get a newer version.
+git comes with OS X but it's typically an older version. Let's get a newer one.
+
+```
 brew install git
+```
 
-git --version
-  * should be > 1.8
+Then run ```git --version```. The version should be > 1.8.
 
-Sublime Text Editor (command line)
-http://www.sublimetext.com/docs/2/osx_command_line.html
+## Installing Sublime Text Editor for the Command Line
+[http://www.sublimetext.com/docs/2/osx_command_line.html](http://www.sublimetext.com/docs/2/osx_command_line.html)
 
-Installing sublime command line
-Skip this if you have another preferred command line text editor.
-
-We're going to install this in the homebrew bin director instead of ~/bin as stated on the sublime text website.
+We're going to install this in the homebrew bin directory instead of ~/bin as stated on the sublime text website.
+```
 ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
-
+```
 
 rbenv
 https://github.com/sstephenson/rbenv
