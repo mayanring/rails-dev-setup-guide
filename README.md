@@ -1,9 +1,9 @@
-# Doing It Right
+# Mac Setup for Rails Development: Doing it Right
 
 This is an opinionated guide to getting a Rails dev environment setup quickly on a Mac. This is written assuming you have Lion (10.7+) or later as your operating system.
 If you have the choice, always choose a Mac for your dev environment. It's just easier. Linux is okay too.
 
-I'm writing this guide to help new developers setup a clean system. If you already have some of this software installed, you'll have to adjust accordingly. If you use RVM or MacPorts, you'll need to fully uninstall those before continuing as they're incompatible with rbenv and HomeBrew, which are my preferred tools.
+I'm writing this guide to help new-ish developers setup a clean system. If you already have some of this software installed, you'll have to adjust accordingly. If you use RVM or MacPorts, you'll need to fully uninstall those before continuing as they're incompatible with rbenv and HomeBrew, which are my preferred tools.
 
 This guide assumes that you're using bash shell, which is the default shell for the OS X Terminal.app. I also assume that you use .bash_profile to setup PATH and other environment variables. If you use a different bash config file, be sure to substitute it where appropriate below.
 
@@ -45,7 +45,7 @@ Now run ```brew update``` to get the latest HomeBrew formulas.
 
 ### An Aside: Why PATH Order is Important
 
-Command-line executables are searched by going through each folder in the PATH variable, one by one in the order listed. As soon as an app with the same name is found, it stops searching the rest of the folders. OS X comes with built-in apps (and you might have your own apps installed prior to this), but we often want to use newer versions instead. To see the PATH directories, run ```echo $PATH```.
+Command-line executables are searched by going through each folder in the PATH variable, one by one in the order listed. As soon as an app with the same name is found, it stops searching the rest of the folders. OS X comes with built-in apps (and you might have your own apps installed prior to this), but we often want to use newer versions instead. To make sure the newer version gets 'picked up', we need to ensure that the symlinked HomeBrew /bin folder comes before other system folders. To see the PATH directories, run ```echo $PATH```.
 
 HomeBrew packages are downloaded and installed in /usr/local/Cellar/ by default, and symlinked into /usr/local/bin. This folder will not be overriden the next time Apple
 releases an incremental feline update.
@@ -190,45 +190,21 @@ By default any Rails commands now will use the latest version of Rails. Sometime
 
 To make a new Rails 4 project, ```cd``` into your projects folder:
 ```
-rails new app_name
+rails new my_awesome_app
 ```
 or
 ```
-rails _3.2.13_ new app_name
+rails _3.2.13_ new my_awesome_app
 ```
 
-then run ```rails server```. Visit ```http://localhost:3000``` in your browser. Congrats!
+then run ```bundle exec rails server```. Visit ```http://localhost:3000``` in your browser. If you see the welcome page, congrats – Rails works!
 
+## GitHub Setup
 
-TBD:
+Now you'll need to setup Git for GitHub. GitHub has some good documentation on how to do this:
 
-GitHub Setup
-* hook git up to your existing GitHub account
-* setup ssh keys so you don't have to type your password in every single time
+[Set up Git](https://help.github.com/articles/set-up-git#set-up-git)
 
-(see brian's thing)
+[Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys) - this is so you don't have to type your password every time you push.
 
-Node.js
-
-Resources
-http://blog.teamtreehouse.com/installing-ruby-rails-and-mysql-on-os-x-lion
-
-git (newer version)
-  * config stuff
-
-homebrew
-rbenv
-ruby
-rails 3, 4 (local install)
-imagemagick
-mysql
-
-
-
-ssh key generation
-
-
-software (optional)
-* installing package manager for sublime
-* postgres.app
-* sequel pro
+I prefer to setup SSH keys instead of using https.
