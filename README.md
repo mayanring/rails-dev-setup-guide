@@ -100,7 +100,7 @@ brew install ruby-build
 Now we need to modify our bash config. Open up bash_profile ```subl ~/.bash_profile``` and add the following to the end of the file and save:
 
 ```
-add ' eval "$(rbenv init -)" '
+eval "$(rbenv init -)"
 ```
 
 Then either restart Terminal or run ```source ~/.bash_profile``` to apply the changes.
