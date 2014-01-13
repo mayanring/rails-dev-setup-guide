@@ -23,7 +23,7 @@ Install the latest [XCode](https://developer.apple.com/xcode/). **Make sure to a
 
 To install HomeBrew, copy, paste and run the following at the command line:
 ```
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
 Then close terminal and re-open it (restart terminal).
