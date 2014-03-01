@@ -67,7 +67,7 @@ brew install git
 Then run ```git --version```. The version should be > 1.8.
 
 ## Installing Sublime Text 2 for the Command Line
-[http://www.sublimetext.com/docs/2/OS X_command_line.html](http://www.sublimetext.com/docs/2/OS X_command_line.html)
+[http://www.sublimetext.com/docs/2/OS X_command_line.html](https://www.sublimetext.com/docs/2/osx_command_line.html)
 
 Sublime Text 2 comes with a command-line app called ```subl```. We're going to install this in the homebrew bin directory instead of ~/bin as stated on the sublime text website.
 ```
