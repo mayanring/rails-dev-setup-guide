@@ -167,23 +167,17 @@ and then Connect. You're now connected to your MySQL database and can add, view,
 
 You need to have Rails locally in order to create new Rails projects. After the project is created (or if you're working with an existing Rails project), you'll be using the bundled versions of Rails specific to your project.
 
-To get the latest stable version of Rails 3:
-```
-gem install rails -v 3.2.13
-```
-
-Never run sudo in front of these commands, or it may install to the wrong folder.
-
-You can look at your gems using ```gem list```. Verify that Rails is there and the version is correct.
-
-Now run ```source ~/.bash_profile``` so that rails is visible.
-
-Let's install Rails 4 (the latest at the time of writing) as well:
+To get the latest stable version of Rails:
 ```
 gem install rails
 ```
 
-```source ~/.bash_profile``` again.
+Never run sudo in front of these gem commands, or it may install to the wrong folder.
+
+You can look at your gems using ```gem list```. Verify that Rails is there and that the version is 4.0.0 or greater.
+
+Now run ```source ~/.bash_profile``` so that rails is visible.
+
 
 ### Making a New Rails Project
 By default any Rails commands now will use the latest version of Rails. Sometimes you'll have to use Rails 3 though.
@@ -191,10 +185,6 @@ By default any Rails commands now will use the latest version of Rails. Sometime
 To make a new Rails 4 project, ```cd``` into your projects folder:
 ```
 rails new my_awesome_app
-```
-or
-```
-rails _3.2.13_ new my_awesome_app
 ```
 
 then run ```bundle exec rails server```. Visit ```http://localhost:3000``` in your browser. If you see the welcome page, congrats – Rails works!
