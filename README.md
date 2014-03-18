@@ -129,38 +129,11 @@ RubyGems is a package management framework for Ruby. It ships with Ruby 2.0.0+. 
 
 Run ```gem update --system``` to update to the latest version.
 
-## MySQL (server)
+## Postgres
 
-```
-brew install mysql
-```
+PostgreSQL is awesome. Prefer it over MySQL if you have the choice. The easiest way to install this is via [Postgres.app](http://postgresapp.com/). Download it, drag it to the applications folder, and then double-click to launch. While it's open, the database server is running (it adds an elephant icon to your taskbar). When you close it, the database server shuts down.
 
-After installation you get a message showing you how to run mysql automatically when your system boots:
-
-![MySQL post-installation message](assets/install-mysql.png)
-
-If you don't want it to startup on boot, you can run the following commands to start and stop mysql server:
-```
-mysql.server start
-mysql.server stop
-```
-
-Use ```mysql -uroot``` to connect to the server using the command line, but we'll be using Sequel Pro to interact with the database in general. Sequel Pro is awesome.
-
-## Sequel Pro (MySQL client)
-
-[http://www.sequelpro.com](http://www.sequelpro.com)
-
-Download and drag this to your Applications folder to install. This is the best MySQL client for Mac.
-
-Go to the Socket tab and enter the following to connect:
-
-```
-Name: localhost
-Username: root
-```
-
-and then Connect. You're now connected to your MySQL database and can add, view, delete databases like a boss.
+After you install the app, follow the 'Command-Line Tools' section in the [documentation](http://postgresapp.com/documentation/) to make sure your PATH contains a reference to this app. Otherwise you'll be using the default one that ships with your version of OSX.
 
 
 ## Installing Rails locally
