@@ -86,7 +86,7 @@ brew install rbenv
 
 ![Installing rbenv](assets/install-rbenv.png)
 
-This installs [rbenv](https://github.com/sstephenson/rbenv), a lightweight tool to manage different versions of Ruby. OS X comes with an old version of Ruby, but we'll generally want to have our own versions of it (particularly 1.9.3 and 2.0.0).
+This installs [rbenv](https://github.com/sstephenson/rbenv), a lightweight tool to manage different versions of Ruby. OS X comes with an old version of Ruby, but we'll generally want to have our own, newer versions of it.
 
 ### ruby-build
 
@@ -109,16 +109,16 @@ If you look at your path (```echo $PATH```) you should see that reloading your c
 
 ## Installing Ruby
 
-To install ruby 2.0.0-p247 (substitute this for the latest stable version of ruby indicated on [ruby-lang.org](http://ruby-lang.org)):
+To install ruby 2.1.0 (substitute this for the latest recommended version of ruby indicated on the [Rails website](http://rubyonrails.org/download)):
 ```
-rbenv install 2.0.0-p247
+rbenv install 2.1.0
 ```
 
-This may take some time. Go get a coffee. I like [Stumptown](http://stumptowncoffee.com/). You can install other rubies this way as well.
+This may take some time. Go get a coffee. I like [Stumptown](http://stumptowncoffee.com/). You can install other rubies (different versions of ruby) this way as well.
 
 After this finishes, you can setup your global (default) Ruby:
 ```
-rbenv global 2.0.0-p247
+rbenv global 2.1.0
 ```
 
 Note that you can override this global setting per project. See [Choosing the Ruby Version](https://github.com/sstephenson/rbenv#choosing-the-ruby-version) for more information.
