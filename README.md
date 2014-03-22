@@ -153,9 +153,7 @@ Now run ```source ~/.bash_profile``` so that rails is visible.
 
 
 ### Making a New Rails Project
-By default any Rails commands now will use the latest version of Rails. Sometimes you'll have to use Rails 3 though.
-
-To make a new Rails 4 project, ```cd``` into your projects folder:
+To make a new Rails project, ```cd``` into your projects folder:
 ```
 rails new my_awesome_app
 ```
